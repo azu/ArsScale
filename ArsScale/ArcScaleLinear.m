@@ -20,26 +20,26 @@
     return self;
 }
 
-typedef NSNumber *(^IdentifierNumber)(NSNumber *number);
+typedef NSNumber *(^ArsIdentifierNumber)(NSNumber *number);
 
-typedef IdentifierNumber(^Interpolate)(NSNumber *a, NSNumber *b);
+typedef ArsIdentifierNumber(^ArsInterpolate)(NSNumber *a, NSNumber *b);
 
-typedef IdentifierNumber(^Uninterpolate)(NSNumber *a, NSNumber *b);
+typedef ArsIdentifierNumber(^ArsUninterpolate)(NSNumber *a, NSNumber *b);
 
-typedef IdentifierNumber (^Linear)(NSArray *domain, NSArray *range, Uninterpolate unInterpolate, Interpolate interpolate);
+typedef ArsIdentifierNumber (^ArsLinear)(NSArray *domain, NSArray *range, ArsUninterpolate unInterpolate, ArsInterpolate interpolate);
 
-- (Linear)linear {
-    return ^(NSArray *domain, NSArray *range, Uninterpolate uninterpolate, Interpolate interpolate) {
-        IdentifierNumber u = uninterpolate(domain[0], domain[1]);
-        IdentifierNumber i = interpolate(range[0], range[1]);
+- (ArsLinear)linear {
+    return ^(NSArray *domain, NSArray *range, ArsUninterpolate uninterpolate, ArsInterpolate interpolate) {
+        ArsIdentifierNumber u = uninterpolate(domain[0], domain[1]);
+        ArsIdentifierNumber i = interpolate(range[0], range[1]);
         return ^NSNumber *(NSNumber *number) {
             return i(u(number));
         };
     };
 }
 
-- (IdentifierNumber (^)(NSNumber *, NSNumber *))uninterpolate {
-    IdentifierNumber (^uninterpolate)(NSNumber *, NSNumber *) = ^IdentifierNumber(NSNumber *a, NSNumber *b) {
+- (ArsUninterpolate)uninterpolate {
+    ArsIdentifierNumber (^uninterpolate)(NSNumber *, NSNumber *) = ^ArsIdentifierNumber(NSNumber *a, NSNumber *b) {
         float aValue = [a floatValue];
         float bValue = [b floatValue];
         float result = bValue - aValue ? 1 / (bValue - aValue) : 0;
@@ -50,8 +50,8 @@ typedef IdentifierNumber (^Linear)(NSArray *domain, NSArray *range, Uninterpolat
     return uninterpolate;
 }
 
-- (IdentifierNumber (^)(NSNumber *, NSNumber *))interpolate {
-    IdentifierNumber (^interpolate)(NSNumber *, NSNumber *) = ^IdentifierNumber(NSNumber *a, NSNumber *b) {
+- (ArsInterpolate)interpolate {
+    ArsIdentifierNumber (^interpolate)(NSNumber *, NSNumber *) = ^ArsIdentifierNumber(NSNumber *a, NSNumber *b) {
         return ^NSNumber *(NSNumber *number) {
             return number;
         };
@@ -59,10 +59,10 @@ typedef IdentifierNumber (^Linear)(NSArray *domain, NSArray *range, Uninterpolat
     return interpolate;
 }
 
-- (IdentifierNumber)p_output {
-    Linear linear = [self linear];
-    IdentifierNumber (^uninterpolate)(NSNumber *, NSNumber *) = [self uninterpolate];
-    IdentifierNumber (^interpolate)(NSNumber *, NSNumber *) = [self interpolate];
+- (ArsIdentifierNumber)p_output {
+    ArsLinear linear = [self linear];
+    ArsUninterpolate uninterpolate = [self uninterpolate];
+    ArsInterpolate interpolate = [self interpolate];
     return linear(self.domain, self.range, uninterpolate, interpolate);
 }
 
