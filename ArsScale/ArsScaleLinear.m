@@ -37,7 +37,8 @@ typedef ArsIdentifierNumber (^ArsLinear)(NSArray *domain, NSArray *range, ArsUni
             NSUInteger minLastIndex = MIN(self.domain.count, self.range.count) - 1;
             NSArray *sortedDomain = domain;
             NSArray *sortedRange = range;
-            if ([domain[minLastIndex] compare:domain[0]] == NSOrderedAscending) {
+            // last < first
+            if ([domain.lastObject compare:domain.firstObject] == NSOrderedAscending) {
                 sortedDomain = [[domain reverseObjectEnumerator] allObjects];
                 sortedRange = [[range reverseObjectEnumerator] allObjects];
             }
@@ -58,10 +59,10 @@ typedef ArsIdentifierNumber (^ArsLinear)(NSArray *domain, NSArray *range, ArsUni
         return pFunction;
     } else {
         return ^(NSArray *domain, NSArray *range, ArsUninterpolate uninterpolate, ArsInterpolate interpolate) {
-            ArsIdentifierNumber u = uninterpolate(domain[0], domain[1]);
-            ArsIdentifierNumber i = interpolate(range[0], range[1]);
+            ArsIdentifierNumber uFn = uninterpolate(domain[0], domain[1]);
+            ArsIdentifierNumber iFn = interpolate(range[0], range[1]);
             return ^NSNumber *(NSNumber *number) {
-                return i(u(number));
+                return iFn(uFn(number));
             };
         };
     }
