@@ -37,7 +37,7 @@ typedef ArsIdentifierNumber (^ArsLinear)(NSArray *domain, NSArray *range, ArsUni
             NSUInteger minLastIndex = MIN(self.domain.count, self.range.count) - 1;
             NSArray *sortedDomain = domain;
             NSArray *sortedRange = range;
-            if (domain[minLastIndex] < domain[0]) {
+            if ([domain[minLastIndex] compare:domain[0]] == NSOrderedAscending) {
                 sortedDomain = [[domain reverseObjectEnumerator] allObjects];
                 sortedRange = [[range reverseObjectEnumerator] allObjects];
             }
