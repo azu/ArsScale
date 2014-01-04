@@ -4,6 +4,7 @@
 
 
 #import "ArsScaleLinear.h"
+#import "ArsBisector.h"
 
 @implementation ArsScaleLinear {
 
@@ -29,22 +30,51 @@ typedef ArsIdentifierNumber(^ArsUninterpolate)(NSNumber *a, NSNumber *b);
 typedef ArsIdentifierNumber (^ArsLinear)(NSArray *domain, NSArray *range, ArsUninterpolate unInterpolate, ArsInterpolate interpolate);
 
 - (ArsLinear)linear {
-    return ^(NSArray *domain, NSArray *range, ArsUninterpolate uninterpolate, ArsInterpolate interpolate) {
-        ArsIdentifierNumber u = uninterpolate(domain[0], domain[1]);
-        ArsIdentifierNumber i = interpolate(range[0], range[1]);
-        return ^NSNumber *(NSNumber *number) {
-            return i(u(number));
+    NSUInteger count = MIN(self.domain.count, self.range.count);
+    NSAssert(count > 0, @"must set domain/range");
+    if (count > 2) {
+        ArsLinear pFunction = ^ArsIdentifierNumber(NSArray *domain, NSArray *range, ArsUninterpolate unInterpolate, ArsInterpolate interpolate) {
+            NSUInteger minLastIndex = MIN(self.domain.count, self.range.count) - 1;
+            NSArray *sortedDomain = domain;
+            NSArray *sortedRange = range;
+            if (domain[minLastIndex] < domain[0]) {
+                sortedDomain = [[domain reverseObjectEnumerator] allObjects];
+                sortedRange = [[range reverseObjectEnumerator] allObjects];
+            }
+            NSMutableArray *doneDomain = [NSMutableArray array];
+            NSMutableArray *doneRange = [NSMutableArray array];
+            NSUInteger i = 0;
+            while (++i <= minLastIndex) {
+                [doneDomain addObject:unInterpolate(sortedDomain[i - 1], sortedDomain[i])];
+                [doneRange addObject:interpolate(sortedRange[i - 1], sortedRange[i])];
+            }
+            return ^NSNumber *(NSNumber *number) {
+                NSUInteger insertIndex = [ArsBisector bisectRight:number inArray:sortedDomain low:1 hight:minLastIndex] - 1;
+                ArsIdentifierNumber uFn = doneDomain[insertIndex];
+                ArsIdentifierNumber iFn = doneRange[insertIndex];
+                return iFn(uFn(number));
+            };
         };
-    };
+        return pFunction;
+    } else {
+        return ^(NSArray *domain, NSArray *range, ArsUninterpolate uninterpolate, ArsInterpolate interpolate) {
+            ArsIdentifierNumber u = uninterpolate(domain[0], domain[1]);
+            ArsIdentifierNumber i = interpolate(range[0], range[1]);
+            return ^NSNumber *(NSNumber *number) {
+                return i(u(number));
+            };
+        };
+    }
 }
 
 - (ArsUninterpolate)uninterpolate {
     ArsIdentifierNumber (^uninterpolate)(NSNumber *, NSNumber *) = ^ArsIdentifierNumber(NSNumber *a, NSNumber *b) {
         float aValue = [a floatValue];
         float bValue = [b floatValue];
-        float result = bValue - aValue ? 1 / (bValue - aValue) : 0;
+        float diffValue = bValue - aValue;
+        float resultValue = diffValue != 0 ? 1 / diffValue : 0;
         return ^NSNumber *(NSNumber *number) {
-            return @(([number floatValue] - aValue) * result);
+            return @(([number floatValue] - aValue) * resultValue);
         };
     };
     return uninterpolate;
@@ -52,8 +82,12 @@ typedef ArsIdentifierNumber (^ArsLinear)(NSArray *domain, NSArray *range, ArsUni
 
 - (ArsInterpolate)interpolate {
     ArsIdentifierNumber (^interpolate)(NSNumber *, NSNumber *) = ^ArsIdentifierNumber(NSNumber *a, NSNumber *b) {
+        float aValue = [a floatValue];
+        float bValue = [b floatValue];
+        float diffValue = bValue - aValue;
         return ^NSNumber *(NSNumber *number) {
-            return number;
+            float resultValue = aValue + diffValue * [number floatValue];
+            return @(resultValue);
         };
     };
     return interpolate;
