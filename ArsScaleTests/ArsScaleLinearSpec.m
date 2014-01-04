@@ -4,12 +4,12 @@
 
 
 #import "Kiwi.h"
-#import "ArcScaleLinear.h"
+#import "ArsScaleLinear.h"
 
-SPEC_BEGIN(ArcScaleLinearSpec)
-    __block ArcScaleLinear *linear;
+SPEC_BEGIN(ArsScaleLinearSpec)
+    __block ArsScaleLinear *linear;
     beforeEach(^{
-        linear = [[ArcScaleLinear alloc] init];
+        linear = [[ArsScaleLinear alloc] init];
     });
     afterEach(^{
         linear = nil;

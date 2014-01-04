@@ -13,9 +13,9 @@
 		17B5C86326E6710058E76D53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C9FA7F59165761A88A46 /* InfoPlist.strings */; };
 		17B5C8A14FAA94EBB7A60FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C92DC26DACA367F1E106 /* UIKit.framework */; };
 		17B5C8E4698C123B5EA8D1AF /* ArsScaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFDC11298C278B585DB0 /* ArsScaleTests.m */; };
-		17B5CCEF3C9FE2CFAD6ADBB6 /* ArcScaleLinearSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C736AF939BD6A7BF6B73 /* ArcScaleLinearSpec.m */; };
+		17B5CCEF3C9FE2CFAD6ADBB6 /* ArsScaleLinearSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C736AF939BD6A7BF6B73 /* ArsScaleLinearSpec.m */; };
 		17B5CE06C77B4E5A14F71B7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C8C90CC54688D97AADDE /* Foundation.framework */; };
-		17B5CE0E8543FA00203F9A48 /* ArcScaleLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C94B0800DEDBA8762AFA /* ArcScaleLinear.m */; };
+		17B5CE0E8543FA00203F9A48 /* ArsScaleLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C94B0800DEDBA8762AFA /* ArsScaleLinear.m */; };
 		17B5CFE9B470EDAF4F7BEA68 /* ArsScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CC7E5BB76375C051B18E /* ArsScale.m */; };
 		17B5CFFD531DCC4C823E97C1 /* ArsScale.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17B5CDDDA78F3F564ED727B2 /* ArsScale.h */; };
 		C6C685F43D3949D29DE7F7F8 /* libPods-ArsScaleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F453DAB78EC14C7F9130EE4F /* libPods-ArsScaleTests.a */; };
@@ -48,14 +48,14 @@
 		17B5C010E6572DB5BB3A90FA /* ArsScaleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "ArsScaleTests-Info.plist"; sourceTree = "<group>"; };
 		17B5C18E565132C18169FB35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17B5C20C2C62E17196BE6983 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		17B5C736AF939BD6A7BF6B73 /* ArcScaleLinearSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcScaleLinearSpec.m; sourceTree = "<group>"; };
+		17B5C736AF939BD6A7BF6B73 /* ArsScaleLinearSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsScaleLinearSpec.m; sourceTree = "<group>"; };
 		17B5C8C5DB839CDC9BE46855 /* libArsScale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libArsScale.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B5C8C90CC54688D97AADDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17B5C92DC26DACA367F1E106 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		17B5C94B0800DEDBA8762AFA /* ArcScaleLinear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcScaleLinear.m; sourceTree = "<group>"; };
+		17B5C94B0800DEDBA8762AFA /* ArsScaleLinear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsScaleLinear.m; sourceTree = "<group>"; };
 		17B5C9FD34366B4A7C39A9A1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		17B5CC7E5BB76375C051B18E /* ArsScale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArsScale.m; sourceTree = "<group>"; };
-		17B5CD03EF7128A28E352352 /* ArcScaleLinear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcScaleLinear.h; sourceTree = "<group>"; };
+		17B5CD03EF7128A28E352352 /* ArsScaleLinear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsScaleLinear.h; sourceTree = "<group>"; };
 		17B5CDDDA78F3F564ED727B2 /* ArsScale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArsScale.h; sourceTree = "<group>"; };
 		17B5CE7BC273B7770ABF67A8 /* ArsScale-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArsScale-Prefix.pch"; sourceTree = "<group>"; };
 		17B5CFDC11298C278B585DB0 /* ArsScaleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArsScaleTests.m; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 			children = (
 				17B5C759D64F92E16D2BCF62 /* Supporting Files */,
 				17B5CFDC11298C278B585DB0 /* ArsScaleTests.m */,
-				17B5C736AF939BD6A7BF6B73 /* ArcScaleLinearSpec.m */,
+				17B5C736AF939BD6A7BF6B73 /* ArsScaleLinearSpec.m */,
 			);
 			path = ArsScaleTests;
 			sourceTree = "<group>";
@@ -104,8 +104,8 @@
 				17B5C5739CF75C767BC2C7A8 /* Supporting Files */,
 				17B5CDDDA78F3F564ED727B2 /* ArsScale.h */,
 				17B5CC7E5BB76375C051B18E /* ArsScale.m */,
-				17B5C94B0800DEDBA8762AFA /* ArcScaleLinear.m */,
-				17B5CD03EF7128A28E352352 /* ArcScaleLinear.h */,
+				17B5C94B0800DEDBA8762AFA /* ArsScaleLinear.m */,
+				17B5CD03EF7128A28E352352 /* ArsScaleLinear.h */,
 			);
 			path = ArsScale;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17B5CFE9B470EDAF4F7BEA68 /* ArsScale.m in Sources */,
-				17B5CE0E8543FA00203F9A48 /* ArcScaleLinear.m in Sources */,
+				17B5CE0E8543FA00203F9A48 /* ArsScaleLinear.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17B5C8E4698C123B5EA8D1AF /* ArsScaleTests.m in Sources */,
-				17B5CCEF3C9FE2CFAD6ADBB6 /* ArcScaleLinearSpec.m in Sources */,
+				17B5CCEF3C9FE2CFAD6ADBB6 /* ArsScaleLinearSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

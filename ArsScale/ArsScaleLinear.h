@@ -7,7 +7,7 @@
 #import "ArsScale.h"
 
 
-@interface ArcScaleLinear : ArsScale
+@interface ArsScaleLinear : ArsScale
 #pragma mark - produce
 - (NSNumber *)scale:(NSNumber *) number;
 

@@ -3,9 +3,9 @@
 //
 
 
-#import "ArcScaleLinear.h"
+#import "ArsScaleLinear.h"
 
-@implementation ArcScaleLinear {
+@implementation ArsScaleLinear {
 
 }
 - (id)init {
