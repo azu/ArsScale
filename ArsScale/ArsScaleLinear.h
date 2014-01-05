@@ -6,8 +6,12 @@
 #import <Foundation/Foundation.h>
 #import "ArsScale.h"
 
+@class ArsBisector;
+
 
 @interface ArsScaleLinear : ArsScale
+@property(nonatomic) BOOL clamp;
+
 #pragma mark - produce
 - (NSNumber *)scale:(NSNumber *) number;
 

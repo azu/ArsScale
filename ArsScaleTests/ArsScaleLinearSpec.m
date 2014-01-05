@@ -29,8 +29,8 @@ SPEC_BEGIN(ArsScaleLinearSpec)
         });
     });
 
+    double delta = 1e-6;
     describe(@"-scale", ^{
-        double delta = 1e-6;
         context(@"when default", ^{
             it(@"should return within [0,1]", ^{
                 [[[linear scale:@.5] should] equal:.5 withDelta:delta];
@@ -48,7 +48,7 @@ SPEC_BEGIN(ArsScaleLinearSpec)
                 [[[linear scale:@2.5] should] equal:1.5 withDelta:delta];
             });
         });
-        context(@"when domain [4,2,1]", ^{
+        context(@"when domain [4,2,1] range [1,2,4]", ^{
             beforeEach(^{
                 linear.domain = @[@4, @2, @1];
                 linear.range = @[@1, @2, @4];
@@ -56,6 +56,29 @@ SPEC_BEGIN(ArsScaleLinearSpec)
             it(@"can convert a polylinear descending domsin", ^{
                 [[[linear scale:@(1)] should] equal:4 withDelta:delta];
                 [[[linear scale:@(3)] should] equal:1.5 withDelta:delta];
+            });
+        });
+    });
+    describe(@"-clamp", ^{
+        context(@"when default", ^{
+            it(@"should return NO", ^{
+                [[theValue(linear.clamp) should] beNo];
+            });
+        });
+        context(@"when clamp is YES", ^{
+            beforeEach(^{
+                linear.clamp = YES;
+            });
+            it(@"can clamp to the domain", ^{
+                [[[linear scale:@(-.5)] should] equal:0 withDelta:delta];
+                [[[linear scale:@(.5)] should] equal:.5 withDelta:delta];
+                [[[linear scale:@(1.5)] should] equal:1 withDelta:delta];
+            });
+            it(@"can clamp to the range", ^{
+                linear.range = @[@1, @0];
+                [[[linear invert:@(-.5)] should] equal:1 withDelta:delta];
+                [[[linear invert:@(.5)] should] equal:.5 withDelta:delta];
+                [[[linear invert:@(1.5)] should] equal:0 withDelta:delta];
             });
         });
     });
