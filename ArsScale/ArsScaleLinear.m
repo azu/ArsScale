@@ -22,15 +22,15 @@
     return self;
 }
 
-typedef NSNumber *(^ArsIdentifierNumber)(NSNumber *number);
+typedef NSNumber *(^ArsIdentityNumber)(NSNumber *number);
 
-typedef ArsIdentifierNumber(^ArsInterpolate)(NSNumber *a, NSNumber *b);
+typedef ArsIdentityNumber(^ArsInterpolate)(NSNumber *a, NSNumber *b);
 
-typedef ArsIdentifierNumber(^ArsUninterpolate)(NSNumber *a, NSNumber *b);
+typedef ArsIdentityNumber(^ArsUninterpolate)(NSNumber *a, NSNumber *b);
 
-typedef ArsIdentifierNumber (^ArsLinear)(NSArray *domain, NSArray *range, ArsUninterpolate unInterpolate, ArsInterpolate interpolate);
+typedef ArsIdentityNumber (^ArsLinear)(NSArray *domain, NSArray *range, ArsUninterpolate unInterpolate, ArsInterpolate interpolate);
 
-static ArsLinear const scale_polylinear = ^ArsIdentifierNumber(NSArray *domain, NSArray *range, ArsUninterpolate unInterpolate, ArsInterpolate interpolate) {
+static ArsLinear const scale_polylinear = ^ArsIdentityNumber(NSArray *domain, NSArray *range, ArsUninterpolate unInterpolate, ArsInterpolate interpolate) {
     NSUInteger minLastIndex = MIN(domain.count, range.count) - 1;
     NSArray *sortedDomain = domain;
     NSArray *sortedRange = range;
@@ -48,15 +48,15 @@ static ArsLinear const scale_polylinear = ^ArsIdentifierNumber(NSArray *domain, 
     }
     return ^NSNumber *(NSNumber *number) {
         NSUInteger insertIndex = [ArsBisector bisectRight:number inArray:sortedDomain low:1 hight:minLastIndex] - 1;
-        ArsIdentifierNumber uFn = doneDomain[insertIndex];
-        ArsIdentifierNumber iFn = doneRange[insertIndex];
+        ArsIdentityNumber uFn = doneDomain[insertIndex];
+        ArsIdentityNumber iFn = doneRange[insertIndex];
         return iFn(uFn(number));
     };
 };
 
 static ArsLinear const scale_bilinear = ^(NSArray *domain, NSArray *range, ArsUninterpolate uninterpolate, ArsInterpolate interpolate) {
-    ArsIdentifierNumber uFn = uninterpolate(domain[0], domain[1]);
-    ArsIdentifierNumber iFn = interpolate(range[0], range[1]);
+    ArsIdentityNumber uFn = uninterpolate(domain[0], domain[1]);
+    ArsIdentityNumber iFn = interpolate(range[0], range[1]);
     return ^NSNumber *(NSNumber *number) {
         return iFn(uFn(number));
     };
@@ -73,7 +73,7 @@ static ArsLinear const scale_bilinear = ^(NSArray *domain, NSArray *range, ArsUn
 }
 
 #pragma mark - static function
-static ArsInterpolate const interpolateNumber = ^ArsIdentifierNumber(NSNumber *a, NSNumber *b) {
+static ArsInterpolate const interpolateNumber = ^ArsIdentityNumber(NSNumber *a, NSNumber *b) {
     float aValue = [a floatValue];
     float bValue = [b floatValue];
     float diffValue = bValue - aValue;
@@ -83,7 +83,7 @@ static ArsInterpolate const interpolateNumber = ^ArsIdentifierNumber(NSNumber *a
     };
 };
 
-static ArsUninterpolate const uninterpolateNumber = ^ArsIdentifierNumber(NSNumber *a, NSNumber *b) {
+static ArsUninterpolate const uninterpolateNumber = ^ArsIdentityNumber(NSNumber *a, NSNumber *b) {
     float aValue = [a floatValue];
     float bValue = [b floatValue];
     float diffValue = bValue - aValue;
@@ -93,7 +93,7 @@ static ArsUninterpolate const uninterpolateNumber = ^ArsIdentifierNumber(NSNumbe
     };
 };
 
-static ArsUninterpolate const uninterpolateClamp = ^ArsIdentifierNumber(NSNumber *a, NSNumber *b) {
+static ArsUninterpolate const uninterpolateClamp = ^ArsIdentityNumber(NSNumber *a, NSNumber *b) {
     float aValue = [a floatValue];
     float bValue = [b floatValue];
     float diffValue = bValue - aValue;
@@ -115,14 +115,14 @@ static ArsUninterpolate const uninterpolateClamp = ^ArsIdentifierNumber(NSNumber
     }
 }
 
-- (ArsIdentifierNumber)p_output {
+- (ArsIdentityNumber)p_output {
     ArsLinear linear = [self linear];
     ArsUninterpolate uninterpolate = [self uninterpolate];
     ArsInterpolate interpolate = [self interpolate];
     return linear(self.domain, self.range, uninterpolate, interpolate);
 }
 
-- (ArsIdentifierNumber)p_input {
+- (ArsIdentityNumber)p_input {
     ArsLinear linear = [self linear];
     ArsUninterpolate uninterpolate = [self uninterpolate];
     // inverse : range <-> domain
