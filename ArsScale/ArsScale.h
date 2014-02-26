@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NSNumber *(^ArsIdentityNumber)(NSNumber *number);
+
+typedef ArsIdentityNumber(^ArsInterpolate)(NSNumber *a, NSNumber *b);
+
+typedef ArsIdentityNumber(^ArsUninterpolate)(NSNumber *a, NSNumber *b);
+
 @interface ArsScale : NSObject
 #pragma mark - DataSet
 /*

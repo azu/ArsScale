@@ -22,13 +22,9 @@
     return self;
 }
 
-typedef NSNumber *(^ArsIdentityNumber)(NSNumber *number);
-
-typedef ArsIdentityNumber(^ArsInterpolate)(NSNumber *a, NSNumber *b);
-
-typedef ArsIdentityNumber(^ArsUninterpolate)(NSNumber *a, NSNumber *b);
-
 typedef ArsIdentityNumber (^ArsLinear)(NSArray *domain, NSArray *range, ArsUninterpolate unInterpolate, ArsInterpolate interpolate);
+
+#pragma mark - static function
 
 static ArsLinear const scale_polylinear = ^ArsIdentityNumber(NSArray *domain, NSArray *range, ArsUninterpolate unInterpolate, ArsInterpolate interpolate) {
     NSUInteger minLastIndex = MIN(domain.count, range.count) - 1;
@@ -62,17 +58,6 @@ static ArsLinear const scale_bilinear = ^(NSArray *domain, NSArray *range, ArsUn
     };
 };
 
-- (ArsLinear)linear {
-    NSUInteger count = MIN(self.domain.count, self.range.count);
-    NSAssert(count > 0, @"must set domain/range");
-    if (count > 2) {
-        return scale_polylinear;
-    } else {
-        return scale_bilinear;
-    }
-}
-
-#pragma mark - static function
 static ArsInterpolate const interpolateNumber = ^ArsIdentityNumber(NSNumber *a, NSNumber *b) {
     float aValue = [a floatValue];
     float bValue = [b floatValue];
@@ -103,26 +88,44 @@ static ArsUninterpolate const uninterpolateClamp = ^ArsIdentityNumber(NSNumber *
     };
 };
 
+
 - (ArsInterpolate)interpolate {
+    if (_interpolate) {
+        return _interpolate;
+    }
     return interpolateNumber;
 }
 
 - (ArsUninterpolate)uninterpolate {
+    if (_uninterpolate) {
+        return _uninterpolate;
+    }
     if (self.clamp) {
         return uninterpolateClamp;
     } else {
         return uninterpolateNumber;
     }
 }
+#pragma mark - linear
 
-- (ArsIdentityNumber)p_output {
+- (ArsLinear)linear {
+    NSUInteger count = MIN(self.domain.count, self.range.count);
+    NSAssert(count > 0, @"must Set domain/range");
+    if (count > 2) {
+        return scale_polylinear;
+    } else {
+        return scale_bilinear;
+    }
+}
+
+- (ArsIdentityNumber)p_scaler {
     ArsLinear linear = [self linear];
     ArsUninterpolate uninterpolate = [self uninterpolate];
     ArsInterpolate interpolate = [self interpolate];
     return linear(self.domain, self.range, uninterpolate, interpolate);
 }
 
-- (ArsIdentityNumber)p_input {
+- (ArsIdentityNumber)p_inverter {
     ArsLinear linear = [self linear];
     ArsUninterpolate uninterpolate = [self uninterpolate];
     // inverse : range <-> domain
@@ -130,12 +133,12 @@ static ArsUninterpolate const uninterpolateClamp = ^ArsIdentityNumber(NSNumber *
 }
 
 - (NSNumber *)scale:(NSNumber *) number {
-    return [self p_output](number);
+    return [self p_scaler](number);
 }
 
 
 - (NSNumber *)invert:(NSNumber *) number {
-    return [self p_input](number);
+    return [self p_inverter](number);
 }
 
 
