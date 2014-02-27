@@ -2,10 +2,8 @@
 // Created by azu on 2014/01/04.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "Kiwi.h"
 #import "ArsScaleLinear.h"
-#import "ArsMathFunction.h"
 
 SPEC_BEGIN(ArsScaleLinearSpec)
     __block ArsScaleLinear *linear;
@@ -115,15 +113,6 @@ SPEC_BEGIN(ArsScaleLinearSpec)
         });
     });
     it(@"test", ^{
-        NSArray *dataArray = @[@1, @5, @10, @11, @22, @44, @55, @114];
-        ArsScaleLinear *scaleLinear = [[ArsScaleLinear alloc] init];
-        CGSize canvasSize = CGSizeMake(320, 480);
-        scaleLinear.domain = @[ArsMin(dataArray), ArsMax(dataArray)];
-        scaleLinear.range = @[@0, @(canvasSize.width)];
-        scaleLinear.clamp = YES;
-        scaleLinear.niceByStep([dataArray count]);
-        for (NSNumber *value in dataArray) {
-            NSLog(@"Value:%@ , scale: %@", value, [scaleLinear scale:value]);
-        }
+
     });
     SPEC_END

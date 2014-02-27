@@ -51,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		17B5C010E6572DB5BB3A90FA /* ArsScaleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "ArsScaleTests-Info.plist"; sourceTree = "<group>"; };
+		17B5C0D6E7C0E56DDC35EB52 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = readme.md; sourceTree = "<group>"; };
 		17B5C18E565132C18169FB35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17B5C1906C61D489AE4234CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		17B5C1AD6F58EB53A5C51E16 /* ArsTickRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsTickRange.h; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 				17B5C0C1760C054963957D90 /* ArsScaleTests */,
 				17B5C20C2C62E17196BE6983 /* Podfile */,
 				BFD93752B7E24BF8BE82423F /* Pods-ArsScaleTests.xcconfig */,
+				17B5C0D6E7C0E56DDC35EB52 /* readme.md */,
 			);
 			sourceTree = "<group>";
 		};
