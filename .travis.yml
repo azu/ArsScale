@@ -1,5 +1,5 @@
 language: objective-c
-script: xcodebuild -workspace ArsScale.xcworkspace -scheme 'ArsScaleTests' -sdk iphonesimulator
+script: xcodebuild -workspace ArsScale.xcworkspace -scheme 'ArsScale' -sdk iphonesimulator
   ONLY_ACTIVE_ARCH=YES clean build test | xcpretty -c
 before_script: gem install xcpretty
 rvm: 1.9.3
