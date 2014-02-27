@@ -112,7 +112,4 @@ SPEC_BEGIN(ArsScaleLinearSpec)
             });
         });
     });
-    it(@"test", ^{
-
-    });
     SPEC_END
