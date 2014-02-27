@@ -5,6 +5,8 @@
 
 #import "ArsScaleLinear.h"
 #import "ArsBisector.h"
+#import "ArsScaleNice.h"
+#import "ArsTickRange.h"
 
 
 @implementation ArsScaleLinear {
@@ -59,35 +61,56 @@ static ArsLinear const scale_bilinear = ^(NSArray *domain, NSArray *range, ArsUn
 };
 
 static ArsInterpolate const interpolateNumber = ^ArsIdentityNumber(NSNumber *a, NSNumber *b) {
-    float aValue = [a floatValue];
-    float bValue = [b floatValue];
-    float diffValue = bValue - aValue;
+    double aValue = [a doubleValue];
+    double bValue = [b doubleValue];
+    double diffValue = bValue - aValue;
     return ^NSNumber *(NSNumber *number) {
-        float resultValue = aValue + diffValue * [number floatValue];
+        double resultValue = aValue + diffValue * [number doubleValue];
         return @(resultValue);
     };
 };
 
 static ArsUninterpolate const uninterpolateNumber = ^ArsIdentityNumber(NSNumber *a, NSNumber *b) {
-    float aValue = [a floatValue];
-    float bValue = [b floatValue];
-    float diffValue = bValue - aValue;
-    float resultValue = diffValue != 0 ? 1 / diffValue : 0;
+    double aValue = [a doubleValue];
+    double bValue = [b doubleValue];
+    double diffValue = bValue - aValue;
+    double reBee = diffValue != 0 ? 1 / diffValue : 0;
     return ^NSNumber *(NSNumber *number) {
-        return @(([number floatValue] - aValue) * resultValue);
+        return @(([number doubleValue] - aValue) * reBee);
     };
 };
 
 static ArsUninterpolate const uninterpolateClamp = ^ArsIdentityNumber(NSNumber *a, NSNumber *b) {
-    float aValue = [a floatValue];
-    float bValue = [b floatValue];
-    float diffValue = bValue - aValue;
+    double aValue = [a doubleValue];
+    double bValue = [b doubleValue];
+    double diffValue = bValue - aValue;
+    double reBee = diffValue != 0 ? 1 / diffValue : 0;
     return ^NSNumber *(NSNumber *number) {
-        float resultValue = aValue + diffValue * [number floatValue];
+        double resultValue = ([number doubleValue] - aValue) * reBee;
         return @(MAX(0, MIN(1, resultValue)));
     };
 };
 
+
+- (void (^)(void))nice {
+    return ^{
+        self.niceByStep(10);
+    };
+}
+
+- (void (^)(NSUInteger))niceByStep {
+    __weak typeof (self) that = self;
+    return ^void(NSUInteger step) {
+        ArsTickRange *tickRange = [that tickRangeForLinear:that.domain count:step];
+        NSArray *niceDomain;
+        if (tickRange.step) {
+            niceDomain = ars_scale_nice(that.domain, tickRange.step);
+        } else {
+            niceDomain = ars_scale_nice(that.domain);
+        }
+        that.domain = niceDomain;
+    };
+}
 
 - (ArsInterpolate)interpolate {
     if (_interpolate) {
@@ -107,6 +130,35 @@ static ArsUninterpolate const uninterpolateClamp = ^ArsIdentityNumber(NSNumber *
     }
 }
 #pragma mark - linear
+- (NSArray *)scaleExtend:(NSArray *) domain {
+    NSNumber *start = [domain firstObject];
+    NSNumber *stop = [domain lastObject];
+    return [start doubleValue] < [stop doubleValue] ? @[start, stop] : @[stop, start];
+}
+
+- (ArsTickRange *)tickRangeForLinear:(NSArray *) domain count:(NSUInteger) stepCount {
+    NSArray *extentDomain = [self scaleExtend:domain];
+    double firstValue = [[extentDomain firstObject] doubleValue];
+    double lastValue = [[extentDomain lastObject] doubleValue];
+    // step is nan...
+    double span = lastValue - firstValue;
+    if (span == 0) {
+        return [ArsTickRange rangeWithStart:[extentDomain firstObject] stop:[extentDomain lastObject]];
+    }
+    double step = pow(10, floor(log10(span / stepCount)));
+    double err = stepCount / span * step;
+    // Filter ticks to get closer to the desired count.
+    if (err <= .15) step *= 10;
+    else if (err <= .35) step *= 5;
+    else if (err <= .75) step *= 2;
+
+    ArsTickRange *arsTickRange = [[ArsTickRange alloc] init];
+    // Round start and stop values to step interval.
+    arsTickRange.start = @(ceil(firstValue / step) * step);
+    arsTickRange.stop = @(floor(lastValue / step) * step + step * .5); // inclusive
+    arsTickRange.step = @(step);
+    return arsTickRange;
+}
 
 - (ArsLinear)linear {
     NSUInteger count = MIN(self.domain.count, self.range.count);
@@ -114,6 +166,7 @@ static ArsUninterpolate const uninterpolateClamp = ^ArsIdentityNumber(NSNumber *
     if (count > 2) {
         return scale_polylinear;
     } else {
+        // [0,1]
         return scale_bilinear;
     }
 }

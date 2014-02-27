@@ -2,9 +2,10 @@
 // Created by azu on 2014/01/04.
 //
 
-
+#import <CoreGraphics/CoreGraphics.h>
 #import "Kiwi.h"
 #import "ArsScaleLinear.h"
+#import "ArsMathFunction.h"
 
 SPEC_BEGIN(ArsScaleLinearSpec)
     __block ArsScaleLinear *linear;
@@ -59,7 +60,7 @@ SPEC_BEGIN(ArsScaleLinearSpec)
             });
         });
     });
-    describe(@"-clamp", ^{
+    describe(@"@propety clamp", ^{
         context(@"when default", ^{
             it(@"should return NO", ^{
                 [[theValue(linear.clamp) should] beNo];
@@ -81,5 +82,48 @@ SPEC_BEGIN(ArsScaleLinearSpec)
                 [[[linear invert:@(1.5)] should] equal:0 withDelta:delta];
             });
         });
+    });
+    describe(@"-nice()", ^{
+        void (^domainNiceThat)(NSArray *, NSArray *) = ^(NSArray *domain, NSArray *result) {
+            ArsScaleLinear *scaleLinear = [[ArsScaleLinear alloc] init];
+            scaleLinear.domain = domain;
+            scaleLinear.nice();
+            [[scaleLinear.domain should] equal:result];
+        };
+        void (^domainNiceByStepThat)(NSArray *, NSArray *, NSUInteger) = ^(NSArray *domain, NSArray *result, NSUInteger step) {
+            ArsScaleLinear *scaleLinear = [[ArsScaleLinear alloc] init];
+            scaleLinear.domain = domain;
+            scaleLinear.niceByStep(step);
+            [[scaleLinear.domain should] equal:result];
+        };
+        it(@"nices the domain, extending it to round numbers", ^{
+            domainNiceThat(@[@1.1, @10.9], @[@1, @11]);
+            domainNiceThat(@[@10.9, @1.1], @[@11, @1]);
+            domainNiceThat(@[@123.1, @6.7], @[@130, @0]);
+            domainNiceThat(@[@0, @0.49], @[@0, @0.5]);
+        });
+        it(@"has no effect on degenerate domains", ^{
+            domainNiceThat(@[@0, @0], @[@0, @0]);
+            domainNiceThat(@[@0, @0.5], @[@0, @0.5]);
+        });
+        context(@"when has a argument", ^{
+            it(@"accepts a tick count to control nicing step", ^{
+                domainNiceByStepThat(@[@12, @87], @[@0, @100], 5);
+                domainNiceByStepThat(@[@10, @87], @[@10, @90], 10);
+                domainNiceByStepThat(@[@12, @87], @[@12, @87], 100);
+            });
+        });
+    });
+    it(@"test", ^{
+        NSArray *dataArray = @[@1, @5, @10, @11, @22, @44, @55, @114];
+        ArsScaleLinear *scaleLinear = [[ArsScaleLinear alloc] init];
+        CGSize canvasSize = CGSizeMake(320, 480);
+        scaleLinear.domain = @[ArsMin(dataArray), ArsMax(dataArray)];
+        scaleLinear.range = @[@0, @(canvasSize.width)];
+        scaleLinear.clamp = YES;
+        scaleLinear.niceByStep([dataArray count]);
+        for (NSNumber *value in dataArray) {
+            NSLog(@"Value:%@ , scale: %@", value, [scaleLinear scale:value]);
+        }
     });
     SPEC_END

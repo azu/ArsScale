@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17B5C06ECC3B813A24972528 /* ArsTickRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C93A53914FEA6BD58E5B /* ArsTickRange.m */; };
+		17B5C07A5952FDD56E44D624 /* ArsMathFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CD211EA8520B152CA68B /* ArsMathFunction.m */; };
 		17B5C30D9E27F7B792202E7F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C9FD34366B4A7C39A9A1 /* XCTest.framework */; };
 		17B5C4C14B041596E0432C7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C8C90CC54688D97AADDE /* Foundation.framework */; };
+		17B5C5B78A813DA3C3604A42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C1906C61D489AE4234CC /* CoreGraphics.framework */; };
 		17B5C5DC8A5D5DE24C06DA05 /* libArsScale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C8C5DB839CDC9BE46855 /* libArsScale.a */; };
 		17B5C86326E6710058E76D53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C9FA7F59165761A88A46 /* InfoPlist.strings */; };
 		17B5C8A14FAA94EBB7A60FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C92DC26DACA367F1E106 /* UIKit.framework */; };
 		17B5C8E4698C123B5EA8D1AF /* ArsScaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFDC11298C278B585DB0 /* ArsScaleTests.m */; };
+		17B5CA55F091684DA9136EFF /* ArsScaleNice.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CBC058868CB8AB7093B5 /* ArsScaleNice.m */; };
 		17B5CAAA3FDE34C77ECD4D65 /* ArsBisector.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C7CD8D8D32BD4A4673F3 /* ArsBisector.m */; };
 		17B5CCEF3C9FE2CFAD6ADBB6 /* ArsScaleLinearSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C736AF939BD6A7BF6B73 /* ArsScaleLinearSpec.m */; };
 		17B5CE06C77B4E5A14F71B7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C8C90CC54688D97AADDE /* Foundation.framework */; };
@@ -48,20 +52,27 @@
 /* Begin PBXFileReference section */
 		17B5C010E6572DB5BB3A90FA /* ArsScaleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "ArsScaleTests-Info.plist"; sourceTree = "<group>"; };
 		17B5C18E565132C18169FB35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		17B5C1906C61D489AE4234CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		17B5C1AD6F58EB53A5C51E16 /* ArsTickRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsTickRange.h; sourceTree = "<group>"; };
 		17B5C20C2C62E17196BE6983 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		17B5C736AF939BD6A7BF6B73 /* ArsScaleLinearSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsScaleLinearSpec.m; sourceTree = "<group>"; };
 		17B5C7CD8D8D32BD4A4673F3 /* ArsBisector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsBisector.m; sourceTree = "<group>"; };
 		17B5C8C5DB839CDC9BE46855 /* libArsScale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libArsScale.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B5C8C90CC54688D97AADDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17B5C92DC26DACA367F1E106 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		17B5C93A53914FEA6BD58E5B /* ArsTickRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsTickRange.m; sourceTree = "<group>"; };
 		17B5C94B0800DEDBA8762AFA /* ArsScaleLinear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsScaleLinear.m; sourceTree = "<group>"; };
 		17B5C9FD34366B4A7C39A9A1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		17B5CA1621FA41E153FA7FE4 /* ArsScaleNice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsScaleNice.h; sourceTree = "<group>"; };
+		17B5CBC058868CB8AB7093B5 /* ArsScaleNice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsScaleNice.m; sourceTree = "<group>"; };
 		17B5CC7E5BB76375C051B18E /* ArsScale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArsScale.m; sourceTree = "<group>"; };
 		17B5CD03EF7128A28E352352 /* ArsScaleLinear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsScaleLinear.h; sourceTree = "<group>"; };
+		17B5CD211EA8520B152CA68B /* ArsMathFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsMathFunction.m; sourceTree = "<group>"; };
 		17B5CD754D3CD7DA3041AE89 /* ArsBisector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsBisector.h; sourceTree = "<group>"; };
 		17B5CDDDA78F3F564ED727B2 /* ArsScale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArsScale.h; sourceTree = "<group>"; };
 		17B5CE7BC273B7770ABF67A8 /* ArsScale-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArsScale-Prefix.pch"; sourceTree = "<group>"; };
 		17B5CFDC11298C278B585DB0 /* ArsScaleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArsScaleTests.m; sourceTree = "<group>"; };
+		17B5CFE07AA12F407EBAA68C /* ArsMathFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsMathFunction.h; sourceTree = "<group>"; };
 		17B5CFE7702EAAACB831CC91 /* ArsScaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArsScaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD93752B7E24BF8BE82423F /* Pods-ArsScaleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArsScaleTests.xcconfig"; path = "Pods/Pods-ArsScaleTests.xcconfig"; sourceTree = "<group>"; };
 		F453DAB78EC14C7F9130EE4F /* libPods-ArsScaleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArsScaleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17B5CE06C77B4E5A14F71B7C /* Foundation.framework in Frameworks */,
+				17B5C5B78A813DA3C3604A42 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,8 +122,21 @@
 				17B5C94B0800DEDBA8762AFA /* ArsScaleLinear.m */,
 				17B5CD03EF7128A28E352352 /* ArsScaleLinear.h */,
 				17B5C912F9CF9D975821488F /* ArsBisect */,
+				17B5CBC058868CB8AB7093B5 /* ArsScaleNice.m */,
+				17B5CA1621FA41E153FA7FE4 /* ArsScaleNice.h */,
+				17B5C7EA1F04DD9150921E7C /* ArsTickRange */,
+				17B5C255397C688B41F65F2A /* Scale */,
 			);
 			path = ArsScale;
+			sourceTree = "<group>";
+		};
+		17B5C255397C688B41F65F2A /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				17B5CD211EA8520B152CA68B /* ArsMathFunction.m */,
+				17B5CFE07AA12F407EBAA68C /* ArsMathFunction.h */,
+			);
+			path = Scale;
 			sourceTree = "<group>";
 		};
 		17B5C5739CF75C767BC2C7A8 /* Supporting Files */ = {
@@ -129,6 +154,7 @@
 				17B5C9FD34366B4A7C39A9A1 /* XCTest.framework */,
 				17B5C92DC26DACA367F1E106 /* UIKit.framework */,
 				F453DAB78EC14C7F9130EE4F /* libPods-ArsScaleTests.a */,
+				17B5C1906C61D489AE4234CC /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,6 +178,15 @@
 				17B5C9FA7F59165761A88A46 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17B5C7EA1F04DD9150921E7C /* ArsTickRange */ = {
+			isa = PBXGroup;
+			children = (
+				17B5C93A53914FEA6BD58E5B /* ArsTickRange.m */,
+				17B5C1AD6F58EB53A5C51E16 /* ArsTickRange.h */,
+			);
+			path = ArsTickRange;
 			sourceTree = "<group>";
 		};
 		17B5C912F9CF9D975821488F /* ArsBisect */ = {
@@ -291,6 +326,9 @@
 			files = (
 				17B5CFE9B470EDAF4F7BEA68 /* ArsScale.m in Sources */,
 				17B5CE0E8543FA00203F9A48 /* ArsScaleLinear.m in Sources */,
+				17B5CA55F091684DA9136EFF /* ArsScaleNice.m in Sources */,
+				17B5C06ECC3B813A24972528 /* ArsTickRange.m in Sources */,
+				17B5C07A5952FDD56E44D624 /* ArsMathFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
