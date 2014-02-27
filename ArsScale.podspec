@@ -10,5 +10,6 @@ Pod::Spec.new do |s|
   	:git => "https://github.com/azu/ArsScale.git",
   	:tag => s.version.to_s
   }
+  s.source_files  = 'ArsScale/**/*.{h,m}'
   s.requires_arc = true
 end
