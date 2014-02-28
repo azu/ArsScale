@@ -15,5 +15,4 @@
 
 + (instancetype)rangeWithStart:(NSNumber *) start stop:(NSNumber *) stop;
 
-- (NSString *)description;
 @end

@@ -114,11 +114,18 @@ SPEC_BEGIN(ArsScaleLinearSpec)
     });
     describe(@"-ticks", ^{
         beforeEach(^{
-            linear.domain = @[@2, @-1];
+            linear.domain = @[@.123456789, @1.23456789];
         });
         it(@"generates ticks of varying degree", ^{
-            NSArray *array = [linear ticks:16];
-            NSLog(@"array = %@", array);
+            [[[[linear ticks:1] firstObject] should] equal:@1];
+            [[[[linear ticks:2] firstObject] should] equal:@0.5];
+            [[[[linear ticks:4] firstObject] should] equal:@0.2];
+            [[[[linear ticks:8] firstObject] should] equal:@0.2];
+            [[[[linear ticks:16] firstObject] should] equal:@0.2];
+            [[[[linear ticks:32] firstObject] should] equal:@0.15];
+            [[[[linear ticks:64] firstObject] should] equal:@0.14];
+            [[[[linear ticks:128] firstObject] should] equal:@0.13];
+            [[[[linear ticks:256] firstObject] should] equal:@0.125];
         });
     });
     SPEC_END

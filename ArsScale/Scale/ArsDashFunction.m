@@ -44,7 +44,7 @@ __attribute__((overloadable)) NSArray *ArsRoundInteger(NSArray *numbers) {
     [numbers enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL *stop) {
         NSDecimal placeHolder;
         NSDecimal decimalValue = [obj decimalValue];
-        NSDecimalRound(&placeHolder, &decimalValue, 2, NSRoundPlain);
+        NSDecimalRound(&placeHolder, &decimalValue, 3, NSRoundPlain);
         [result addObject:[NSDecimalNumber decimalNumberWithDecimal:placeHolder]];
     }];
     return result;

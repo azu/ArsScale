@@ -197,7 +197,6 @@ static ArsUninterpolate const uninterpolateClamp = ^ArsIdentityNumber(NSNumber *
 
 - (NSArray *)ticks:(NSUInteger) count {
     ArsTickRange *tickRange = [self tickRangeForLinear:self.domain count:count];
-    NSLog(@"tickRange = %@", tickRange);
     NSArray *array = ArsRange(tickRange.start, tickRange.stop, tickRange.step);
     return ArsRoundInteger(array);
 }
