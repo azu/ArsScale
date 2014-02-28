@@ -32,6 +32,7 @@
 - (NSNumber *)invert:(NSNumber *) number;
 
 #pragma mark - ticks
-
+// returns approximately count representative values from the scale's input domain.
+// @see https://github.com/mbostock/d3/wiki/Quantitative-Scales#wiki-linear_ticks
 - (NSArray *)ticks:(NSUInteger)count;
 @end
