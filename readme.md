@@ -11,7 +11,7 @@ pod 'ArsScale', :git => 'https://github.com/azu/ArsScale.git'
 ## Usage
 
 ```objc
-NSArray *dataArray = @[@1, @5, @10, @11, @22, @44, @55, @114];
+NSArray *dataArray = @[@1, @5, @10, @18, @22, @44, @55, @114];
 ArsScaleLinear *scaleLinear = [[ArsScaleLinear alloc] init];
 CGSize canvasSize = CGSizeMake(320, 480);
 scaleLinear.domain = @[ArsMin(dataArray), ArsMax(dataArray)];
@@ -19,8 +19,36 @@ scaleLinear.range = @[@0, @(canvasSize.width)];
 scaleLinear.clamp = YES;
 scaleLinear.niceByStep([dataArray count]);
 for (NSNumber *value in dataArray) {
-    NSLog(@"Value:%@ , scale: %@", value, [scaleLinear scale:value]);
+    NSLog(@"Value:%@ , Scaled: %@", value, [scaleLinear scale:value]);
 }
+/*
+Value:1 , Scaled: 2.666666666666667
+Value:5 , Scaled: 13.33333333333333
+Value:10 , Scaled: 26.66666666666666
+Value:18 , Scaled: 48
+Value:22 , Scaled: 58.66666666666666
+Value:44 , Scaled: 117.3333333333333
+Value:55 , Scaled: 146.6666666666667
+Value:114 , Scaled: 304
+*/
+[linear ticks:10];
+/* e.g) use for axis label
+(
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120
+)
+*/
 ```
 
 ## Contributing
