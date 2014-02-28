@@ -112,4 +112,13 @@ SPEC_BEGIN(ArsScaleLinearSpec)
             });
         });
     });
+    describe(@"-ticks", ^{
+        beforeEach(^{
+            linear.domain = @[@2, @-1];
+        });
+        it(@"generates ticks of varying degree", ^{
+            NSArray *array = [linear ticks:16];
+            NSLog(@"array = %@", array);
+        });
+    });
     SPEC_END

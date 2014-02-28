@@ -26,9 +26,12 @@
 @property(nonatomic, copy) ArsUninterpolate uninterpolate;
 #pragma mark - produce
 
-
 - (NSNumber *)scale:(NSNumber *) number;
 
 // invert scale
 - (NSNumber *)invert:(NSNumber *) number;
+
+#pragma mark - ticks
+
+- (NSArray *)ticks:(NSUInteger)count;
 @end

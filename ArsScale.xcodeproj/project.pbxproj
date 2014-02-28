@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17B5C06ECC3B813A24972528 /* ArsTickRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C93A53914FEA6BD58E5B /* ArsTickRange.m */; };
-		17B5C07A5952FDD56E44D624 /* ArsMathFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CD211EA8520B152CA68B /* ArsMathFunction.m */; };
+		17B5C07A5952FDD56E44D624 /* ArsDashFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CD211EA8520B152CA68B /* ArsDashFunction.m */; };
 		17B5C30D9E27F7B792202E7F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C9FD34366B4A7C39A9A1 /* XCTest.framework */; };
 		17B5C4C14B041596E0432C7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C8C90CC54688D97AADDE /* Foundation.framework */; };
 		17B5C5B78A813DA3C3604A42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C1906C61D489AE4234CC /* CoreGraphics.framework */; };
@@ -68,12 +68,12 @@
 		17B5CBC058868CB8AB7093B5 /* ArsScaleNice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsScaleNice.m; sourceTree = "<group>"; };
 		17B5CC7E5BB76375C051B18E /* ArsScale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArsScale.m; sourceTree = "<group>"; };
 		17B5CD03EF7128A28E352352 /* ArsScaleLinear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsScaleLinear.h; sourceTree = "<group>"; };
-		17B5CD211EA8520B152CA68B /* ArsMathFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsMathFunction.m; sourceTree = "<group>"; };
+		17B5CD211EA8520B152CA68B /* ArsDashFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsDashFunction.m; sourceTree = "<group>"; };
 		17B5CD754D3CD7DA3041AE89 /* ArsBisector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsBisector.h; sourceTree = "<group>"; };
 		17B5CDDDA78F3F564ED727B2 /* ArsScale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArsScale.h; sourceTree = "<group>"; };
 		17B5CE7BC273B7770ABF67A8 /* ArsScale-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArsScale-Prefix.pch"; sourceTree = "<group>"; };
 		17B5CFDC11298C278B585DB0 /* ArsScaleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArsScaleTests.m; sourceTree = "<group>"; };
-		17B5CFE07AA12F407EBAA68C /* ArsMathFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsMathFunction.h; sourceTree = "<group>"; };
+		17B5CFE07AA12F407EBAA68C /* ArsDashFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsDashFunction.h; sourceTree = "<group>"; };
 		17B5CFE7702EAAACB831CC91 /* ArsScaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArsScaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD93752B7E24BF8BE82423F /* Pods-ArsScaleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArsScaleTests.xcconfig"; path = "Pods/Pods-ArsScaleTests.xcconfig"; sourceTree = "<group>"; };
 		F453DAB78EC14C7F9130EE4F /* libPods-ArsScaleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArsScaleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,8 +134,8 @@
 		17B5C255397C688B41F65F2A /* Scale */ = {
 			isa = PBXGroup;
 			children = (
-				17B5CD211EA8520B152CA68B /* ArsMathFunction.m */,
-				17B5CFE07AA12F407EBAA68C /* ArsMathFunction.h */,
+				17B5CD211EA8520B152CA68B /* ArsDashFunction.m */,
+				17B5CFE07AA12F407EBAA68C /* ArsDashFunction.h */,
 			);
 			path = Scale;
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 				17B5CE0E8543FA00203F9A48 /* ArsScaleLinear.m in Sources */,
 				17B5CA55F091684DA9136EFF /* ArsScaleNice.m in Sources */,
 				17B5C06ECC3B813A24972528 /* ArsTickRange.m in Sources */,
-				17B5C07A5952FDD56E44D624 /* ArsMathFunction.m in Sources */,
+				17B5C07A5952FDD56E44D624 /* ArsDashFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,12 +4,7 @@
 
 
 #import "ArsScaleNice.h"
-#import "ArsMathFunction.h"
-
-NSArray *sortDomain(NSArray *domain) {
-
-    return nil;
-}
+#import "ArsDashFunction.h"
 
 __attribute__((overloadable)) NSArray *ars_scale_nice(NSArray *domain) {
     NSMutableArray *mutableArray = [domain mutableCopy];

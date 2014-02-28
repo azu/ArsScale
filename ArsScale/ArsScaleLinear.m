@@ -7,6 +7,7 @@
 #import "ArsBisector.h"
 #import "ArsScaleNice.h"
 #import "ArsTickRange.h"
+#import "ArsDashFunction.h"
 
 
 @implementation ArsScaleLinear {
@@ -192,6 +193,13 @@ static ArsUninterpolate const uninterpolateClamp = ^ArsIdentityNumber(NSNumber *
 
 - (NSNumber *)invert:(NSNumber *) number {
     return [self p_inverter](number);
+}
+
+- (NSArray *)ticks:(NSUInteger) count {
+    ArsTickRange *tickRange = [self tickRangeForLinear:self.domain count:count];
+    NSLog(@"tickRange = %@", tickRange);
+    NSArray *array = ArsRange(tickRange.start, tickRange.stop, tickRange.step);
+    return ArsRoundInteger(array);
 }
 
 
