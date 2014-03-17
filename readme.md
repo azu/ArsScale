@@ -56,7 +56,7 @@ Value:114 , Scaled: 304
 * [azu/LineChartOnRecycledScroll](https://github.com/azu/LineChartOnRecycledScroll "azu/LineChartOnRecycledScroll")
     * LineChart
 * [azu/DrawLineLiz](https://github.com/azu/DrawLineLiz "azu/DrawLineLiz")
-    * barPlot
+    * BarPlot
 
 ## Contributing
 
