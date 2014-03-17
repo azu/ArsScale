@@ -3,5 +3,3 @@ script: xcodebuild -workspace ArsScale.xcworkspace -scheme 'ArsScale' -sdk iphon
   ONLY_ACTIVE_ARCH=YES clean build test | xcpretty -c
 before_script: 
   - gem install xcpretty
-  - gem update cocoapods
-rvm: 1.9.3
