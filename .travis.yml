@@ -2,7 +2,5 @@ language: objective-c
 script: xcodebuild -workspace ArsScale.xcworkspace -scheme 'ArsScale' -sdk iphonesimulator
   ONLY_ACTIVE_ARCH=YES clean build test | xcpretty -c
 before_script: 
-  - rvm get stable
-  - rvm use ruby-2.0.0-p247
-  - gem install cocoapods
+  - sudo gem install cocoapods
   - gem install xcpretty
