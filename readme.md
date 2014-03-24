@@ -2,6 +2,8 @@
 
 Objective-C port of [D3.js Scales](https://github.com/mbostock/d3/wiki/Scales "Scales").
 
+* Support Linear scale.
+
 ## Installation
 
 ```
