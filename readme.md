@@ -51,6 +51,44 @@ Value:114 , Scaled: 304
 */
 ```
 
+## API
+
+```objc
+@interface ArsScaleLinear : ArsScale
+// extend the scale domain to nice round numbers.
+// @see https://github.com/mbostock/d3/wiki/Quantitative-Scales#wiki-linear_nice
+// @example `linear.nice()`
+- (void (^)(void))nice;
+
+// @example `linear.niceByStep(10)`
+- (void (^)(NSUInteger))niceByStep;
+
+// enable or disable clamping of the output range.
+// @see https://github.com/mbostock/d3/wiki/Quantitative-Scales#wiki-linear_clamp
+@property(nonatomic, getter=isClamp) BOOL clamp;
+#pragma mark - block
+@property(nonatomic, copy) ArsInterpolate interpolate;
+@property(nonatomic, copy) ArsUninterpolate uninterpolate;
+#pragma mark - produce
+
+- (NSNumber *)scale:(NSNumber *) number;
+
+// invert scale
+- (NSNumber *)invert:(NSNumber *) number;
+
+#pragma mark - ticks
+// returns approximately count representative values from the scale's input domain.
+// @see https://github.com/mbostock/d3/wiki/Quantitative-Scales#wiki-linear_ticks
+- (NSArray *)ticks:(NSUInteger)count;
+@end
+```
+
+## More Info
+
+A concept of D3.scale.
+
+* [Jerome Cukier » d3: scales, and color.](http://www.jeromecukier.net/blog/2011/08/11/d3-scales-and-color/ "Jerome Cukier » d3: scales, and color.")
+
 ## Example
 
 * [azu/LineChartOnRecycledScroll](https://github.com/azu/LineChartOnRecycledScroll "azu/LineChartOnRecycledScroll")

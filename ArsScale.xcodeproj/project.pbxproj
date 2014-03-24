@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		17B5C06ECC3B813A24972528 /* ArsTickRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C93A53914FEA6BD58E5B /* ArsTickRange.m */; };
-		17B5C07A5952FDD56E44D624 /* ArsDashFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CD211EA8520B152CA68B /* ArsDashFunction.m */; };
+		17B5C07A5952FDD56E44D624 /* ArsLinearFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CD211EA8520B152CA68B /* ArsLinearFunction.m */; };
 		17B5C30D9E27F7B792202E7F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C9FD34366B4A7C39A9A1 /* XCTest.framework */; };
 		17B5C4C14B041596E0432C7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C8C90CC54688D97AADDE /* Foundation.framework */; };
 		17B5C5B78A813DA3C3604A42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C1906C61D489AE4234CC /* CoreGraphics.framework */; };
 		17B5C5DC8A5D5DE24C06DA05 /* libArsScale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C8C5DB839CDC9BE46855 /* libArsScale.a */; };
 		17B5C86326E6710058E76D53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C9FA7F59165761A88A46 /* InfoPlist.strings */; };
 		17B5C8A14FAA94EBB7A60FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C92DC26DACA367F1E106 /* UIKit.framework */; };
-		17B5C8E4698C123B5EA8D1AF /* ArsScaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CFDC11298C278B585DB0 /* ArsScaleTests.m */; };
 		17B5CA55F091684DA9136EFF /* ArsScaleNice.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CBC058868CB8AB7093B5 /* ArsScaleNice.m */; };
 		17B5CAAA3FDE34C77ECD4D65 /* ArsBisector.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C7CD8D8D32BD4A4673F3 /* ArsBisector.m */; };
 		17B5CCEF3C9FE2CFAD6ADBB6 /* ArsScaleLinearSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C736AF939BD6A7BF6B73 /* ArsScaleLinearSpec.m */; };
@@ -24,6 +23,7 @@
 		17B5CFE9B470EDAF4F7BEA68 /* ArsScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CC7E5BB76375C051B18E /* ArsScale.m */; };
 		17B5CFFD531DCC4C823E97C1 /* ArsScale.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17B5CDDDA78F3F564ED727B2 /* ArsScale.h */; };
 		C6C685F43D3949D29DE7F7F8 /* libPods-ArsScaleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F453DAB78EC14C7F9130EE4F /* libPods-ArsScaleTests.a */; };
+		EB973C36E5E1467E8EB820E9 /* libPods-ArsScale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0964E61E1004FD783966FE4 /* libPods-ArsScale.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		16FD450EB0CC49088A7FD073 /* Pods-ArsScale.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArsScale.xcconfig"; path = "Pods/Pods-ArsScale.xcconfig"; sourceTree = "<group>"; };
 		17B5C010E6572DB5BB3A90FA /* ArsScaleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "ArsScaleTests-Info.plist"; sourceTree = "<group>"; };
 		17B5C0D6E7C0E56DDC35EB52 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = readme.md; sourceTree = "<group>"; };
 		17B5C18E565132C18169FB35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -68,13 +69,13 @@
 		17B5CBC058868CB8AB7093B5 /* ArsScaleNice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsScaleNice.m; sourceTree = "<group>"; };
 		17B5CC7E5BB76375C051B18E /* ArsScale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArsScale.m; sourceTree = "<group>"; };
 		17B5CD03EF7128A28E352352 /* ArsScaleLinear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsScaleLinear.h; sourceTree = "<group>"; };
-		17B5CD211EA8520B152CA68B /* ArsDashFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsDashFunction.m; sourceTree = "<group>"; };
+		17B5CD211EA8520B152CA68B /* ArsLinearFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArsLinearFunction.m; sourceTree = "<group>"; };
 		17B5CD754D3CD7DA3041AE89 /* ArsBisector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsBisector.h; sourceTree = "<group>"; };
 		17B5CDDDA78F3F564ED727B2 /* ArsScale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArsScale.h; sourceTree = "<group>"; };
 		17B5CE7BC273B7770ABF67A8 /* ArsScale-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArsScale-Prefix.pch"; sourceTree = "<group>"; };
-		17B5CFDC11298C278B585DB0 /* ArsScaleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArsScaleTests.m; sourceTree = "<group>"; };
-		17B5CFE07AA12F407EBAA68C /* ArsDashFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsDashFunction.h; sourceTree = "<group>"; };
+		17B5CFE07AA12F407EBAA68C /* ArsLinearFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArsLinearFunction.h; sourceTree = "<group>"; };
 		17B5CFE7702EAAACB831CC91 /* ArsScaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArsScaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0964E61E1004FD783966FE4 /* libPods-ArsScale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArsScale.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD93752B7E24BF8BE82423F /* Pods-ArsScaleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArsScaleTests.xcconfig"; path = "Pods/Pods-ArsScaleTests.xcconfig"; sourceTree = "<group>"; };
 		F453DAB78EC14C7F9130EE4F /* libPods-ArsScaleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArsScaleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +87,7 @@
 			files = (
 				17B5CE06C77B4E5A14F71B7C /* Foundation.framework in Frameworks */,
 				17B5C5B78A813DA3C3604A42 /* CoreGraphics.framework in Frameworks */,
+				EB973C36E5E1467E8EB820E9 /* libPods-ArsScale.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				17B5C759D64F92E16D2BCF62 /* Supporting Files */,
-				17B5CFDC11298C278B585DB0 /* ArsScaleTests.m */,
 				17B5C736AF939BD6A7BF6B73 /* ArsScaleLinearSpec.m */,
 			);
 			path = ArsScaleTests;
@@ -126,18 +127,18 @@
 				17B5CBC058868CB8AB7093B5 /* ArsScaleNice.m */,
 				17B5CA1621FA41E153FA7FE4 /* ArsScaleNice.h */,
 				17B5C7EA1F04DD9150921E7C /* ArsTickRange */,
-				17B5C255397C688B41F65F2A /* Scale */,
+				17B5C255397C688B41F65F2A /* ArsLinearFunction */,
 			);
 			path = ArsScale;
 			sourceTree = "<group>";
 		};
-		17B5C255397C688B41F65F2A /* Scale */ = {
+		17B5C255397C688B41F65F2A /* ArsLinearFunction */ = {
 			isa = PBXGroup;
 			children = (
-				17B5CD211EA8520B152CA68B /* ArsDashFunction.m */,
-				17B5CFE07AA12F407EBAA68C /* ArsDashFunction.h */,
+				17B5CD211EA8520B152CA68B /* ArsLinearFunction.m */,
+				17B5CFE07AA12F407EBAA68C /* ArsLinearFunction.h */,
 			);
-			path = Scale;
+			path = ArsLinearFunction;
 			sourceTree = "<group>";
 		};
 		17B5C5739CF75C767BC2C7A8 /* Supporting Files */ = {
@@ -156,6 +157,7 @@
 				17B5C92DC26DACA367F1E106 /* UIKit.framework */,
 				F453DAB78EC14C7F9130EE4F /* libPods-ArsScaleTests.a */,
 				17B5C1906C61D489AE4234CC /* CoreGraphics.framework */,
+				A0964E61E1004FD783966FE4 /* libPods-ArsScale.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,6 +172,7 @@
 				17B5C20C2C62E17196BE6983 /* Podfile */,
 				BFD93752B7E24BF8BE82423F /* Pods-ArsScaleTests.xcconfig */,
 				17B5C0D6E7C0E56DDC35EB52 /* readme.md */,
+				16FD450EB0CC49088A7FD073 /* Pods-ArsScale.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17B5CF1FD53CD7F378A009C5 /* Build configuration list for PBXNativeTarget "ArsScale" */;
 			buildPhases = (
+				2D4A206B2B2E4AC6AED0CFC8 /* Check Pods Manifest.lock */,
 				17B5CA84A12D5A9081C0D666 /* Sources */,
 				17B5C0022581B3B01AF5BAC6 /* Frameworks */,
 				17B5C54A5708730A9534F0DD /* CopyFiles */,
+				205BF144B04148ED97695479 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,8 +272,6 @@
 			mainGroup = 17B5C6FF7E3913BE5AEAE6CD;
 			productRefGroup = 17B5CD9F13DA7776491313D7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				17B5C544B8294CAA1557142E /* ArsScale */,
@@ -289,6 +292,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		205BF144B04148ED97695479 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-ArsScale-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D4A206B2B2E4AC6AED0CFC8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		A9E91C633840496DBC44E43F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,7 +363,7 @@
 				17B5CE0E8543FA00203F9A48 /* ArsScaleLinear.m in Sources */,
 				17B5CA55F091684DA9136EFF /* ArsScaleNice.m in Sources */,
 				17B5C06ECC3B813A24972528 /* ArsTickRange.m in Sources */,
-				17B5C07A5952FDD56E44D624 /* ArsDashFunction.m in Sources */,
+				17B5C07A5952FDD56E44D624 /* ArsLinearFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17B5C8E4698C123B5EA8D1AF /* ArsScaleTests.m in Sources */,
 				17B5CCEF3C9FE2CFAD6ADBB6 /* ArsScaleLinearSpec.m in Sources */,
 				17B5CAAA3FDE34C77ECD4D65 /* ArsBisector.m in Sources */,
 			);
@@ -438,6 +470,7 @@
 		};
 		17B5C8E8FC112DB5BC08526D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16FD450EB0CC49088A7FD073 /* Pods-ArsScale.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/ArsScale.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -460,12 +493,14 @@
 				GCC_PREFIX_HEADER = "ArsScale/ArsScale-Prefix.pch";
 				INFOPLIST_FILE = "ArsScaleTests/ArsScaleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
 		17B5CF0EF5355E70B736F92A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16FD450EB0CC49088A7FD073 /* Pods-ArsScale.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/ArsScale.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -488,6 +523,7 @@
 				GCC_PREFIX_HEADER = "ArsScale/ArsScale-Prefix.pch";
 				INFOPLIST_FILE = "ArsScaleTests/ArsScaleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -502,6 +538,7 @@
 				17B5CF9ABF36F1FF7C429203 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17B5CBBAB80A2917EE2F774D /* Build configuration list for PBXProject "ArsScale" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +556,7 @@
 				17B5CF0EF5355E70B736F92A /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

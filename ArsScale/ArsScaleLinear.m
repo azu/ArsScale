@@ -7,7 +7,8 @@
 #import "ArsBisector.h"
 #import "ArsScaleNice.h"
 #import "ArsTickRange.h"
-#import "ArsDashFunction.h"
+#import "ArsLinearFunction.h"
+#import "ArsRange.h"
 
 
 @implementation ArsScaleLinear {

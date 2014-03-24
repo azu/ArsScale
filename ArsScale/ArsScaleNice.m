@@ -4,7 +4,7 @@
 
 
 #import "ArsScaleNice.h"
-#import "ArsDashFunction.h"
+#import "ArsMinMax.h"
 
 __attribute__((overloadable)) NSArray *ars_scale_nice(NSArray *domain) {
     NSMutableArray *mutableArray = [domain mutableCopy];
