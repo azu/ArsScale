@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ArsScale"
-  s.version      = "0.1.1"
-  s.summary      = "Porting D3.js Scales concepts to iOS."
+  s.version      = "0.1.2"
+  s.summary      = "Objective-C port of D3.js scale."
   s.homepage     = "https://github.com/azu/ArsScale"
   s.license      = { :type => 'BSD', :file => 'LICENSE' }
   s.author       = { "azu" => "info@efcl.info" }

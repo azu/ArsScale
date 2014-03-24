@@ -1,6 +1,6 @@
 # ArsScale [![Build Status](https://travis-ci.org/azu/ArsScale.png)](https://travis-ci.org/azu/ArsScale)
 
-A port into Objective-C of the [D3.js Scales](https://github.com/mbostock/d3/wiki/Scales "Scales").
+Objective-C port of [D3.js Scales](https://github.com/mbostock/d3/wiki/Scales "Scales").
 
 ## Installation
 
