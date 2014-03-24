@@ -96,6 +96,11 @@ A concept of D3.scale.
 * [azu/DrawLineLiz](https://github.com/azu/DrawLineLiz "azu/DrawLineLiz")
     * BarPlot
 
+## Dependence
+
+* [azu/ArsDashFunction](https://github.com/azu/ArsDashFunction "azu/ArsDashFunction")
+    * Contain `ArsMin`, `ArsMax`, `ArsRange` etc...
+
 ## Contributing
 
 1. Fork it!
