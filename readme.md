@@ -115,5 +115,12 @@ D3.js API Reference
 
 ## License
 
-MIT
+3-clause BSD license
 
+## Acknowledgment
+
+```
+D3.js
+https://github.com/mbostock/d3
+Copyright (c) 2010-2014, Michael Bostock
+```
