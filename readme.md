@@ -85,9 +85,13 @@ Value:114 , Scaled: 304
 
 ## More Info
 
-A concept of D3.scale.
+Very Nice article about D3.scale.
 
 * [Jerome Cukier » d3: scales, and color.](http://www.jeromecukier.net/blog/2011/08/11/d3-scales-and-color/ "Jerome Cukier » d3: scales, and color.")
+
+D3.js API Reference
+
+* [D3.js Scales](https://github.com/mbostock/d3/wiki/Scales "Scales")
 
 ## Example
 
@@ -112,3 +116,4 @@ A concept of D3.scale.
 ## License
 
 MIT
+
