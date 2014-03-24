@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ArsScale"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "Porting D3.js Scales concepts to iOS."
   s.homepage     = "https://github.com/azu/ArsScale"
   s.license      = { :type => 'BSD', :file => 'LICENSE' }
