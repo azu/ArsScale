@@ -6,8 +6,8 @@ Objective-C port of [D3.js Scales](https://github.com/mbostock/d3/wiki/Scales "S
 
 ## Installation
 
-```
-pod 'ArsScale', :git => 'https://github.com/azu/ArsScale.git'
+```sh
+pod 'ArsScale'
 ```
 
 ## Usage
