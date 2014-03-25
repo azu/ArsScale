@@ -99,6 +99,8 @@ D3.js API Reference
 
 * [azu/LineChartOnRecycledScroll](https://github.com/azu/LineChartOnRecycledScroll "azu/LineChartOnRecycledScroll")
     * LineChart
+* [azu/MultipleLineChart](https://github.com/azu/MultipleLineChart "azu/MultipleLineChart")
+    * Multiple LineChart
 * [azu/DrawLineLiz](https://github.com/azu/DrawLineLiz "azu/DrawLineLiz")
     * BarPlot
 
